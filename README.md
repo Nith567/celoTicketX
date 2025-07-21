@@ -4,6 +4,7 @@
 > A borderless, stablecoin-powered event ticketing experience — with NFTs as receipts & access passes.
 
 ---
+> [**CeloTicketX** Repo](https://github.com/Nith567/celoTicketXContracts)  
 
 ## 🧩 Overview
 
