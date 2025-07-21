@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen bg-gradient-to-br from-green-300 via-green-400 to-green-600">
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

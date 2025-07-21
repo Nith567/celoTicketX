@@ -1,13 +1,13 @@
 "use client";
 
-import Header from "@/components/Header";
 import CreateEventForm from "@/components/CreateEventForm";
 import Footer from "@/components/Footer";
 import { useWeb3 } from "@/contexts/useWeb3";
 import { useEffect, useState, useCallback } from "react";
-import lighthouse from '@lighthouse-web3/sdk'
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   const {
     address,
@@ -17,22 +17,12 @@ export default function Home() {
   } = useWeb3();
 
   const router = useRouter();
-
   const [eventLoading, setEventLoading] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     getUserAddress();
   }, []);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const tokenURIs = await getNFTs();
-  //     setUserOwnedNFTs(tokenURIs);
-  //   };
-  //   if (address) {
-  //     getData();
-  //   }
-  // }, [address]);
 
   type CreateEventFormData = {
     name: string;
@@ -47,27 +37,18 @@ export default function Home() {
       if (!address) return;
       setEventLoading(true);
       try {
-
         const formDataText = new FormData();
         const file = new File([details], "event.txt", { type: "text/plain" });
-        formDataText.append("file", file); 
+        formDataText.append("file", file);
         const res = await axios.post("/api/texts", formDataText, {
           headers: { "Content-Type": "multipart/form-data" },
         });
-          const detailsIpfs =`https://green-accurate-frog-295.mypinata.cloud/ipfs/${res.data}`;
-
-        // const detailsUpload = await lighthouse.uploadText(
-        //   details,
-        //   process.env.NEXT_PUBLIC_LIGHTHOUSE_API_KEY!,
-        //   details
-        // );
-        // const detailsIpfs = `ipfs://${detailsUpload.data.Hash}`;
+        const detailsIpfs = `https://green-accurate-frog-295.mypinata.cloud/ipfs/${res.data}`;
 
         let imageIpfs = "";
         if (imageIpfsUrl) {
-
           const formData = new FormData();
-          formData.append("file", imageIpfsUrl); // imageIpfsUrl should be a File object
+          formData.append("file", imageIpfsUrl);
           const res = await axios.post("/api/files", formData, {
             headers: { "Content-Type": "multipart/form-data" },
           });
@@ -87,15 +68,46 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <main className="flex flex-col items-center flex-1 w-full px-2">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-green-300 via-green-400 to-green-600">
+      <main className="flex flex-1 flex-col items-center justify-center w-full px-2">
         {!address ? (
           <div className="h1 mt-10">Connecting...</div>
         ) : (
-          <CreateEventForm loading={eventLoading} onCreateEvent={handleCreateEvent} />
+          <>
+            {!showForm && (
+              <div className="flex flex-col items-center justify-center text-center py-16 w-full">
+                <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-green-700 via-green-500 to-green-400 bg-clip-text text-transparent drop-shadow-lg">
+                  Celo TicketX
+                </h1>
+                <p className="mb-8 text-lg text-green-900 max-w-xl">
+                  Create events and sell tickets cross-chain!<br />
+                  Users can buy tickets with a variety of stablecoins (JPY, GHS, CEUR, CUSD, and more)
+                </p>
+                <Button
+                  title="create Event"
+                  className="bg-gradient-to-r from-green-500 to-green-400 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:from-green-600 hover:to-green-500 transition-all duration-200"
+                  onClick={() => setShowForm(true)}
+                >
+                  Create Event
+                </Button>
+              </div>
+            )}
+            {showForm && (
+              <div className="w-full max-w-md mx-auto p-8 mt-8 mb-8 flex flex-col items-center">
+                <CreateEventForm loading={eventLoading} onCreateEvent={handleCreateEvent} />
+                <Button
+                  title ="Cancel"
+                  variant="outline"
+                  className="mt-4 w-full border-green-400 text-green-700 hover:bg-green-50"
+                  onClick={() => setShowForm(false)}
+                >
+                  Cancel
+                </Button>
+              </div>
+            )}
+          </>
         )}
       </main>
-      <Footer />
     </div>
   );
 }
