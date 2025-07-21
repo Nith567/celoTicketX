@@ -8,7 +8,12 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['cdn-production-opera-website.operacdn.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 };
 
