@@ -3,7 +3,18 @@
 > **Mint. Pay. Own.**  
 > A borderless, stablecoin-powered event ticketing experience — with NFTs as receipts & access passes.
 
----
+## 💡 Problem
+
+- Platforms like **Klook** act as intermediaries in ticketing, charging service fees and settling payments in the local host's currency.
+- What if we solve this using **Mento’s on-chain FX** solution?  
+  → A borderless payment flow where no matter the sender’s currency, the receiver always gets **cUSD**.
+- 🎟️ **Ticket access is fully on-chain via NFTs**, making it transparent, verifiable, and tradable if needed.
+- ⚡ The receiver always gets paid in **cUSD**, which works perfectly with **Celo MiniPay** (also used to pay gas).
+- 🌍 The end-user can pay with a list of supported **stablecoins from different countries** (e.g., cEUR, cKES, cREAL, USDT), and **Mento handles the swap** on-chain.
+- This eliminates currency friction, empowers local sellers, and gives global users easy access — **no middlemen, no borders, just smart contracts**.
+
+<!-- Celo + Mento = super perfect for mobile-native experiences like MiniPay, pay with cusd as gas token  -->
+
 > [**CeloTicketX** Repo](https://github.com/Nith567/celoTicketXContracts)  
 
 ## 🧩 Overview
