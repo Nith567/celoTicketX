@@ -15,7 +15,7 @@
 
 <!-- Celo + Mento = super perfect for mobile-native experiences like MiniPay, pay with cusd as gas token  -->
 
-> [**CeloTicketX** Repo](https://github.com/Nith567/celoTicketXContracts)  
+> [**CeloTicketX Contracts** Repo](https://github.com/Nith567/celoTicketXContracts)  
 
 ## 🧩 Overview
 
