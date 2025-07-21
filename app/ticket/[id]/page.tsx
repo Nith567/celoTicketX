@@ -159,7 +159,7 @@ export default function EventDetailsPage() {
 
   return (
     <div className="max-w-2xl mx-auto p-4">
-      <div className="bg-white rounded-lg shadow-sm border p-6 mb-6">
+      <div className="bg-green-300 rounded-lg shadow-sm border p-6 mb-6">
         <h1 className="text-3xl font-bold mb-3 text-gray-900">{event[1]}</h1>
         <div className="flex items-center mb-4 text-gray-600">
           <span className="text-sm">Created by:</span>
@@ -213,7 +213,7 @@ export default function EventDetailsPage() {
       </div>
 
       {event[6] && (
-        <div className="bg-white rounded-lg shadow-sm border p-6">
+        <div className="bg-green-3000 rounded-lg shadow-sm border p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-900">Purchase Tickets</h2>
 
           <div className="space-y-4">
@@ -252,7 +252,6 @@ export default function EventDetailsPage() {
                 }}
               />
             </div>
-
 
             <button
               className={`w-full py-3 px-4 rounded-md font-medium transition-colors ${

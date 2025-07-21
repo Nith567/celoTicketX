@@ -52,7 +52,7 @@ const CreateEventForm: React.FC<CreateEventFormProps> = React.memo(({ loading, o
   );
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow p-4 w-full max-w-md flex flex-col gap-3 mt-6">
+    <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-3 mx-auto p-4 shadow-lg border border-green-200 bg-white/60 backdrop-blur-sm">
       <h2 className="text-lg font-semibold mb-2">Create Event</h2>
       
       <input 

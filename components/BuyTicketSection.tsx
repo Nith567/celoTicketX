@@ -40,7 +40,7 @@ const BuyTicketSection: React.FC<BuyTicketSectionProps> = React.memo(({ eventId,
   if (eventId === null) return null;
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow p-4 w-full max-w-md flex flex-col gap-3 mt-6">
+    <form onSubmit={handleSubmit} className="bg-green-300 rounded-xl shadow p-4 w-full max-w-md flex flex-col gap-3 mt-6">
       <h2 className="text-lg font-semibold mb-2">Buy Ticket</h2>
       <div className="text-xs mb-1">Event ID: <span className="font-mono">{eventId}</span></div>
       <select className="border rounded px-2 py-1" value={paymentToken} onChange={e => setPaymentToken(e.target.value)} required>
