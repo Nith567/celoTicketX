@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { useParams } from "next/navigation";
 import { useWeb3 } from "@/contexts/useWeb3";
 import Image from 'next/image'
+import QRCodeShare from '@/components/QRCodeShare';
 
 const TOKENS = [
   { name: "CEUR", address: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73" },
@@ -208,6 +209,7 @@ export default function EventDetailsPage() {
             </span>
           </div>
         </div>
+      <QRCodeShare url={typeof window !== 'undefined' ? window.location.href : ''} />
       </div>
 
       {event[6] && (
