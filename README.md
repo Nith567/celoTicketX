@@ -1,66 +1,44 @@
-# React Framework + NextJS | Celo Composer
+# 🎟️ Celo TicketX – Cross-Chain Event Ticketing dApp
 
-Celo Composer support React boilerplate template with TailwindCSS. This is a starter kit with no additional boilerplate code. It's a perfect starter kit to get your project started on Celo blockchain.
+> **Mint. Pay. Own.**  
+> A borderless, stablecoin-powered event ticketing experience — with NFTs as receipts & access passes.
 
-## Setup & Installation
+---
 
+## 🧩 Overview
 
-### Set environment variables
+**Celo TicketX** is a decentralized, cross-chain ticketing platform where:
 
-Create a copy of `.env.example` and rename it to `.env`.
+- 🎤 **Creators** can create events & receive payments in **CUSD**
+- 💸 **Users** can pay in **multiple stablecoins** (e.g. `JPY`, `GHS`, `CEUR`, `CUSD`)
+- 🖼️ Tickets are minted as **NFTs**, giving real ownership & proof
+- 🔁 On-chain **FX conversion** handled by [Mento](https://www.mento.org/)  
+- 💥 Built on the **Celo blockchain**, optimized for mobile & low gas fees
 
-#### Add Wallet Connect ID
+---
 
-Create a WalletConnect Cloud Project ID from [WalletConnect Cloud](https://cloud.walletconnect.com/)
+## 🔗 Features
 
-Provide the WalletConnect Cloud Project ID in your `.env` file to use WalletConnect in your project. As shown in the `.env.example` file.
+- ✅ NFT-based ticketing (ERC-721 compliant)
+- 🌍 Pay in various local stablecoins
+- 🔁 Auto FX conversion to CUSD for creators
+- 📲 Works with **Celo MiniPay** wallets
+- 🧾 IPFS-backed metadata for tickets
+- 🔐 On-chain & verifiable ticket ownership
 
-```typescript
-NEXT_PUBLIC_WC_PROJECT_ID=YOUR_EXAMPLE_PROJECT_ID;
-```
+---
 
-### Install dependencies
+## 🔥 Flow
 
-Install all the required dependencies to run the dApp.
+1. **🎫 Event Creation**  
+   Creator launches an event → uploads details, sets amount.
+2. **💳 User Purchase**  
+   Users buy ticket using any supported stablecoin  
+3. **💱 Mento FX kicks in**  
+   Converts user stablecoin → CUSD  
+4. **📥 Creator receives CUSD**  
+   Creator wallet gets payment  
+5. **🪪 NFT Ticket minted**  
+   NFT sent to buyer wallet → Access granted!
 
-Using **yarn**
-
-```bash
-yarn
-```
-
-or using **npm**
-
-```bash
-npm i
-```
-
-> React + Tailwind CSS Template does not have any dependency on hardhat.
-> This starterkit does not include connection of Hardhat/Truffle with ReactJS. It's up to the user to integrate smart contract with ReactJS. This gives user more flexibility over the dApp.
-
-- To start the dApp, run the following command.
-
-```bash
-yarn dev
-```
-
-or using **npm**
-
-```bash
-npm run dev
-```
-
-## Dependencies
-
-### Default
-
-- [Next.js](https://nextjs.org/) app framework
-- [TailwindCSS](https://tailwindcss.com/) for UI
-
-## Architecture
-
-- `/pages` includes the main application components (specifically `layout.tsx` and `page.tsx`)
-  - `layout.tsx` includes configuration
-  - `page.tsx` is the main page of the application
-- `/components` includes components that are rendered in `page.tsx`
-- `/public` includes static files
+---
