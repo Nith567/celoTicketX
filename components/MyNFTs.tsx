@@ -28,4 +28,6 @@ const MyNFTs: React.FC<MyNFTsProps> = React.memo(({ tokenURIs }) => {
   );
 });
 
+MyNFTs.displayName = 'MyNFTs';
+
 export default MyNFTs; 

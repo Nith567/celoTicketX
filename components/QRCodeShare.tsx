@@ -15,4 +15,6 @@ const QRCodeShare: React.FC<QRCodeShareProps> = React.memo(({ url }) => {
   );
 });
 
+QRCodeShare.displayName = 'QRCodeShare';
+
 export default QRCodeShare; 

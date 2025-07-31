@@ -56,4 +56,6 @@ const BuyTicketSection: React.FC<BuyTicketSectionProps> = React.memo(({ eventId,
   );
 });
 
+BuyTicketSection.displayName = 'BuyTicketSection';
+
 export default BuyTicketSection; 
